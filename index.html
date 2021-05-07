@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clearbit Forms Demo</title>
+    <!-- Clearbit for Marketo Form Shortening -->
+    <script type="text/javascript">
+      var pollForDefinition = function (scope, varname, callback) {
+        if (typeof scope[varname] !== "undefined") {
+          return callback();
+        }
+        var interval = setInterval(function () {
+          if (typeof scope[varname] !== "undefined") {
+            clearInterval(interval);
+            callback();
+          }
+        }, 250);
+      };
+      var script = document.createElement("script");
+      script.src = "https://marketo.clearbit.com/assets/v1/marketo/forms.js";
+      script.async = true;
+      script.setAttribute(
+        "data-clearbit-publishable-key",
+        "pk_44b7f5a3b1aa0bbd07d94b358aa15699"
+      );
+      script.onerror = function (e) {
+        console.log("Clearbit Form JS unable to load");
+        pollForDefinition(window, "MktoForms2", function () {
+          MktoForms2.whenReady(function (form) {
+            form.setValues({
+              clearbitFormStatus: "Clearbit Form JS unable to load",
+            });
+          });
+        });
+      };
+      document.querySelector("head").appendChild(script);
+    </script>
+  </head>
+  <body>
+    <script src="//app-ab32.marketo.com/js/forms2/js/forms2.min.js"></script>
+    <form id="mktoForm_1322"></form>
+    <script>
+      MktoForms2.loadForm("//app-ab32.marketo.com", "797-LZE-483", 1322);
+    </script>
+  </body>
+</html>
