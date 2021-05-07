@@ -36,6 +36,38 @@
       };
       document.querySelector("head").appendChild(script);
     </script>
+    <!-- Clearbit JS -->
+    <script type="text/javascript">
+      var pollForDefinition = function (scope, varname, callback) {
+        if (typeof scope[varname] !== "undefined") {
+          return callback();
+        }
+        var interval = setInterval(function () {
+          if (typeof scope[varname] !== "undefined") {
+            clearInterval(interval);
+            callback();
+          }
+        }, 250);
+      };
+      var script = document.createElement("script");
+      script.src = "https://marketo.clearbit.com/assets/v1/marketo/forms.js";
+      script.async = true;
+      script.setAttribute(
+        "data-clearbit-publishable-key",
+        "pk_YOUR_API_KEY_HERE"
+      );
+      script.onerror = function (e) {
+        console.log("Clearbit Form JS unable to load");
+        pollForDefinition(window, "MktoForms2", function () {
+          MktoForms2.whenReady(function (form) {
+            form.setValues({
+              clearbitFormStatus: "Clearbit Form JS unable to load",
+            });
+          });
+        });
+      };
+      document.querySelector("head").appendChild(script);
+    </script>
   </head>
   <body>
     <script src="//app-ab32.marketo.com/js/forms2/js/forms2.min.js"></script>
