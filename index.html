@@ -100,7 +100,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-YR7G1P7LS1"
+      src="https://www.googletagmanager.com/gtag/js?id=UA-196970845-1"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -109,7 +109,75 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "G-YR7G1P7LS1");
+      gtag("config", "UA-196970845-1");
+    </script>
+    <!-- Clearbit Reveal -->
+    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&variable=reveal"></script>
+
+    <script>
+      let reveal_gtag_map = {
+        send_page_view: false,
+        custom_map: {
+          dimension1: "type",
+          dimension2: "companyName",
+          dimension3: "companyIndustry",
+          dimension4: "companySubIndustry",
+          dimension5: "companyEmployeesRange",
+          dimension6: "companyEstimatedAnnualRevenue",
+          dimension7: "companyAlexaRank",
+          dimension8: "companyCity",
+          dimension9: "companyState",
+          dimension10: "companyCountry",
+          dimension11: "companySicCode",
+          dimension12: "companyTech",
+          dimension13: "companyDomain",
+        },
+      };
+
+      // This line configures the tracking ID with the mapping
+      gtag("config", "UA-Property-Id", reveal_gtag_map);
+
+      let reveal_data_map = {};
+      let nonCompany = "(Non-Company)";
+
+      if (reveal === null || reveal.company === null) {
+        reveal_data_map = {
+          non_interaction: true,
+          type: reveal ? reveal.type : nonCompany,
+          companyName: nonCompany,
+          companyDomain: nonCompany,
+          companyIndustry: nonCompany,
+          companySubIndustry: nonCompany,
+          companyEmployeesRange: nonCompany,
+          companyEstimatedAnnualRevenue: nonCompany,
+          companyAlexaRank: nonCompany,
+          companyCity: nonCompany,
+          companyState: nonCompany,
+          companyCountry: nonCompany,
+          companySicCode: nonCompany,
+          companyTech: nonCompany,
+        };
+      } else {
+        let company = reveal.company;
+        reveal_data_map = {
+          non_interaction: true,
+          type: reveal.type,
+          companyName: company.name,
+          companyDomain: company.domain,
+          companyIndustry: company.category.industry,
+          companySubIndustry: company.category.subIndustry,
+          companyEmployeesRange: company.metrics.employeesRange,
+          companyEstimatedAnnualRevenue: company.metrics.estimatedAnnualRevenue,
+          companyAlexaRank: company.metrics.alexaGlobalRank,
+          companyCity: company.geo.city,
+          companyState: company.geo.state,
+          companyCountry: company.geo.country,
+          companySicCode: company.category.sicCode,
+          companyTech: company.tech,
+        };
+      }
+
+      gtag("event", "Clearbit", reveal_data_map);
     </script>
   </head>
   <body>
