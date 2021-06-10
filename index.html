@@ -4,7 +4,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clearbit Forms Demo</title>
-    <!-- Clearbit for Marketo form shortening -->
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5BG6ZDB");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Clearbit for Marketo -->
     <script type="text/javascript">
       var pollForDefinition = function (scope, varname, callback) {
         if (typeof scope[varname] !== "undefined") {
@@ -36,13 +50,15 @@
       };
       document.querySelector("head").appendChild(script);
     </script>
+    <!-- End Clearbit for Marketo -->
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <!-- Clearbit for HubSpot form shortening -->
+    <!-- End jQuery -->
+    <!-- Clearbit for HubSpot -->
     <script>
       !(function (e) {
         var o = document.getElementsByTagName("script")[0];
@@ -97,8 +113,9 @@
           });
       })(window);
     </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
+    <!-- End Clearbit for HubSpot -->
+    <!-- Google Analytics (gtag.js) -->
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-196970845-1"
     ></script>
@@ -110,9 +127,10 @@
       gtag("js", new Date());
 
       gtag("config", "UA-196970845-1");
-    </script>
+    </script> -->
+    <!-- End Google Analytics (gtag.js) -->
     <!-- Clearbit Reveal -->
-    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&variable=reveal"></script>
+    <!-- <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&variable=reveal"></script>
 
     <script>
       let reveal_gtag_map = {
@@ -178,15 +196,27 @@
       }
 
       gtag("event", "Clearbit", reveal_data_map);
-    </script>
+    </script> -->
+    <!-- End Clearbit Reveal -->
   </head>
   <body>
-    <!-- Marketo embedded form -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5BG6ZDB"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Marketo form -->
     <script src="//app-ab32.marketo.com/js/forms2/js/forms2.min.js"></script>
     <form id="mktoForm_1322"></form>
     <script>
       MktoForms2.loadForm("//app-ab32.marketo.com", "797-LZE-483", 1322);
     </script>
+    <!-- End Marketo form -->
 
     <!-- HubSpot embedded form -->
     <script
@@ -201,5 +231,6 @@
         formId: "c449d22f-7bf9-4a9c-a807-feca25d95f8a",
       });
     </script>
+    <!-- End HubSpot form -->
   </body>
 </html>
