@@ -4,8 +4,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clearbit Forms Demo</title>
-    <!-- Google Tag Manager -->
+    <!-- Google Analytics (gtag.js)-->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-196970845-1"
+    ></script>
+
     <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-196970845-1");
+    </script>
+    <!-- End Google Analytics (gtag.js) -->
+    <!-- Clearbit Reveal -->
+    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&variable=reveal"></script>
+
+    <script>
+      var reveal_gtag_map = {
+        send_page_view: false,
+        custom_map: {
+          dimension1: "ipTraffictype",
+          dimension2: "companyName",
+          dimension3: "companyDomain",
+          dimension4: "companyIndustry",
+          dimension5: "companySubIndustry",
+          dimension6: "companyEmployeesRange",
+          dimension7: "companyEstimatedAnnualRevenue",
+          dimension8: "companyAlexaGlobalRank",
+          dimension9: "companyCity",
+          dimension10: "companyState",
+          dimension11: "companyCountry",
+          dimension12: "companySicCode",
+          dimension13: "companyTech",
+        },
+      };
+
+      // This line configures the tracking ID with the mapping
+      gtag("config", "UA-196970845-1", reveal_gtag_map);
+
+      var reveal_data_map = {};
+      var nonCompany = "(Non-Company)";
+
+      if (reveal === null || reveal.company === null) {
+        reveal_data_map = {
+          non_interaction: true,
+          ipTraffictype: reveal ? reveal.type : nonCompany,
+          companyName: nonCompany,
+          companyDomain: nonCompany,
+          companyIndustry: nonCompany,
+          companySubIndustry: nonCompany,
+          companyEmployeesRange: nonCompany,
+          companyEstimatedAnnualRevenue: nonCompany,
+          companyAlexaGlobalRank: nonCompany,
+          companyCity: nonCompany,
+          companyState: nonCompany,
+          companyCountry: nonCompany,
+          companySicCode: nonCompany,
+          companyTech: nonCompany,
+        };
+      } else {
+        var company = reveal.company;
+        reveal_data_map = {
+          non_interaction: true,
+          ipTraffictype: reveal.type,
+          companyName: company.name,
+          companyDomain: company.domain,
+          companyIndustry: company.category.industry,
+          companySubIndustry: company.category.subIndustry,
+          companyEmployeesRange: company.metrics.employeesRange,
+          companyEstimatedAnnualRevenue: company.metrics.estimatedAnnualRevenue,
+          companyAlexaGlobalRank: company.metrics.alexaGlobalRank,
+          companyCity: company.geo.city,
+          companyState: company.geo.state,
+          companyCountry: company.geo.country,
+          companySicCode: company.category.sicCode,
+          companyTech: company.tech,
+        };
+      }
+
+      gtag("event", "Clearbit", reveal_data_map);
+    </script>
+    <!-- End Clearbit Reveal -->
+    <!-- Google Tag Manager -->
+    <!-- <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -16,7 +100,7 @@
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-5BG6ZDB");
-    </script>
+    </script> -->
     <!-- End Google Tag Manager -->
     <!-- Clearbit for Marketo -->
     <script type="text/javascript">
