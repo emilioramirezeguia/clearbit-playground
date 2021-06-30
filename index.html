@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clearbit Forms Demo</title>
 
-    <!-- GROUP: ANALYTICS.JS/GA.CLEARBIT.COM -->
+    <!-- GROUP: ANALYTICS.JS/GA.JS -->
     <!-- Googe Analytics (analytics.js)-->
     <script>
       (function (i, s, o, g, r, a, m) {
@@ -42,19 +42,19 @@
         ga_trackers.forEach(function (gaName) {
           ga(gaName + ".require", "Clearbit", {
             mapping: {
-              type: "dimension1",
-              companyName: "dimension2",
-              companyDomain: "dimension3",
-              companyIndustry: "dimension4",
-              companySubIndustry: "dimension5",
-              companyEmployeesRange: "dimension6",
-              companyEstimatedAnnualRevenue: "dimension7",
-              companyAlexaGlobalRank: "dimension8",
-              companyCity: "dimension9",
-              companyState: "dimension10",
-              companyCountry: "dimension11",
-              companySicCode: "dimension12",
-              companyTech: "dimension13",
+              dimension1: "ipTraffictype",
+              dimension2: "companyName",
+              dimension3: "companyDomain",
+              dimension4: "companyIndustry",
+              dimension5: "companySubIndustry",
+              dimension6: "companyEmployeesRange",
+              dimension7: "companyEstimatedAnnualRevenue",
+              dimension8: "companyAlexaGlobalRank",
+              dimension9: "companyCity",
+              dimension10: "companyState",
+              dimension11: "companyCountry",
+              dimension12: "companySicCode",
+              dimension13: "companyTech",
             },
           });
         });
@@ -67,26 +67,29 @@
     <!-- EndClearbit Reveal (ga.js)-->
     <!-- END GROUP: ANALYTICS.JS/GA.JS -->
 
+    <!-- GROUP: GTAG.JS/REVEAL -->
     <!-- Google Analytics (gtag.js)-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-196970845-1"
+      src="https://www.googletagmanager.com/gtag/js?id=UA-196970845-2"
     ></script>
-
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "UA-196970845-1");
+
+      gtag("config", "UA-196970845-2");
     </script>
+
     <!-- End Google Analytics (gtag.js) -->
     <!-- Clearbit Reveal -->
     <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&variable=reveal"></script>
 
     <script>
-      var reveal_gtag_map = {
+      let reveal_gtag_map = {
         send_page_view: false,
         custom_map: {
           dimension1: "ipTraffictype",
@@ -106,7 +109,7 @@
       };
 
       // This line configures the tracking ID with the mapping
-      gtag("config", "UA-196970845-1", reveal_gtag_map);
+      gtag("config", "UA-196970845-2", reveal_gtag_map);
 
       var reveal_data_map = {};
       var nonCompany = "(Non-Company)";
@@ -151,6 +154,8 @@
       gtag("event", "Clearbit", reveal_data_map);
     </script>
     <!-- End Clearbit Reveal -->
+    <!-- END GROUP: GTAG.JS/REVEAL -->
+
     <!-- Google Tag Manager -->
     <!-- <script>
       (function (w, d, s, l, i) {
