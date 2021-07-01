@@ -479,7 +479,7 @@
       function identify(event) {
         event.preventDefault();
         const formName = event.target.name;
-        const email = event.target.querySelector(input[(type = "email")]).value;
+        const email = event.target.querySelector("input[type = email]").value;
         clearbit.identify(email, {
           Email: email,
           "Converted from": formName,
