@@ -90,7 +90,7 @@
 
     <!-- End Google Analytics (gtag.js) -->
     <!-- Clearbit Reveal -->
-    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&variable=reveal&callback=useReveal"></script>
+    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&callback=useReveal"></script>
 
     <script>
       let reveal_gtag_map = {
@@ -115,52 +115,52 @@
       // This line configures the tracking ID with the mapping
       gtag("config", "UA-196970845-2", reveal_gtag_map);
 
-      var reveal_data_map = {};
-      var nonCompany = "(Non-Company)";
+      // var reveal_data_map = {};
+      // var nonCompany = "(Non-Company)";
 
-      if (reveal === null || reveal.company === null) {
-        reveal_data_map = {
-          non_interaction: true,
-          ipTraffictype: reveal ? reveal.type : nonCompany,
-          companyName: nonCompany,
-          companyDomain: nonCompany,
-          companyIndustry: nonCompany,
-          companySubIndustry: nonCompany,
-          companyEmployeesRange: nonCompany,
-          companyEstimatedAnnualRevenue: nonCompany,
-          companyAlexaGlobalRank: nonCompany,
-          companyCity: nonCompany,
-          companyState: nonCompany,
-          companyCountry: nonCompany,
-          companySicCode: nonCompany,
-          companyTech: nonCompany,
-        };
-      } else {
-        var company = reveal.company;
-        reveal_data_map = {
-          non_interaction: true,
-          ipTraffictype: reveal.type,
-          companyName: company.name,
-          companyDomain: company.domain,
-          companyIndustry: company.category.industry,
-          companySubIndustry: company.category.subIndustry,
-          companyEmployeesRange: company.metrics.employeesRange,
-          companyEstimatedAnnualRevenue: company.metrics.estimatedAnnualRevenue,
-          companyAlexaGlobalRank: company.metrics.alexaGlobalRank,
-          companyCity: company.geo.city,
-          companyState: company.geo.state,
-          companyCountry: company.geo.country,
-          companySicCode: company.category.sicCode,
-          companyTech: company.tech,
-        };
-      }
+      // if (reveal === null || reveal.company === null) {
+      //   reveal_data_map = {
+      //     non_interaction: true,
+      //     ipTraffictype: reveal ? reveal.type : nonCompany,
+      //     companyName: nonCompany,
+      //     companyDomain: nonCompany,
+      //     companyIndustry: nonCompany,
+      //     companySubIndustry: nonCompany,
+      //     companyEmployeesRange: nonCompany,
+      //     companyEstimatedAnnualRevenue: nonCompany,
+      //     companyAlexaGlobalRank: nonCompany,
+      //     companyCity: nonCompany,
+      //     companyState: nonCompany,
+      //     companyCountry: nonCompany,
+      //     companySicCode: nonCompany,
+      //     companyTech: nonCompany,
+      //   };
+      // } else {
+      //   var company = reveal.company;
+      //   reveal_data_map = {
+      //     non_interaction: true,
+      //     ipTraffictype: reveal.type,
+      //     companyName: company.name,
+      //     companyDomain: company.domain,
+      //     companyIndustry: company.category.industry,
+      //     companySubIndustry: company.category.subIndustry,
+      //     companyEmployeesRange: company.metrics.employeesRange,
+      //     companyEstimatedAnnualRevenue: company.metrics.estimatedAnnualRevenue,
+      //     companyAlexaGlobalRank: company.metrics.alexaGlobalRank,
+      //     companyCity: company.geo.city,
+      //     companyState: company.geo.state,
+      //     companyCountry: company.geo.country,
+      //     companySicCode: company.category.sicCode,
+      //     companyTech: company.tech,
+      //   };
+      // }
 
       gtag("event", "Clearbit", reveal_data_map);
 
-      const useReveal = function () {
-        if (reveal && reveal.company) {
-          var company = reveal.company;
-          console.log("IP Traffic Type", reveal.type);
+      const useReveal = function (revealData) {
+        if (revealData && revealData.company) {
+          var company = revealData.company;
+          console.log("IP Traffic Type", revealData.type);
           console.log("Company Name", company.name);
           console.log("Company Domain", company.domain);
         }
