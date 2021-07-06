@@ -157,14 +157,9 @@
 
       // gtag("event", "Clearbit", reveal_data_map);
 
-      const useReveal = function (revealData) {
-        if (revealData && revealData.company) {
-          var company = revealData.company;
-          console.log("IP Traffic Type", revealData.type);
-          console.log("Company Name", company.name);
-          console.log("Company Domain", company.domain);
-        }
-      };
+      function useReveal(reveal) {
+        console.log(reveal && reveal.company);
+      }
     </script>
     <!-- End Clearbit Reveal -->
     <!-- END GROUP: GTAG.JS/REVEAL -->
