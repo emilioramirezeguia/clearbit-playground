@@ -90,7 +90,7 @@
 
     <!-- End Google Analytics (gtag.js) -->
     <!-- Clearbit Reveal -->
-    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&variable=reveal"></script>
+    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&variable=reveal&callback=useReveal"></script>
 
     <script>
       let reveal_gtag_map = {
@@ -156,6 +156,15 @@
       }
 
       gtag("event", "Clearbit", reveal_data_map);
+
+      const useReveal = function () {
+        if (reveal && reveal.company) {
+          var company = reveal.company;
+          console.log("IP Traffic Type", reveal.type);
+          console.log("Company Name", company.name);
+          console.log("Company Domain", company.domain);
+        }
+      };
     </script>
     <!-- End Clearbit Reveal -->
     <!-- END GROUP: GTAG.JS/REVEAL -->
@@ -479,7 +488,8 @@
       function identify(event) {
         event.preventDefault();
         const formName = event.target.name;
-        const email = event.target.querySelector("input[type = email]").value;
+        debugger;
+        const email = event.target.querySelector("[name = 'email']").value;
         clearbit.identify(email, {
           Email: email,
           "Converted from": formName,
