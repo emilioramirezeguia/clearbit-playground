@@ -75,8 +75,6 @@
     <!-- End Segment -->
 
     <!-- Clearbit Reveal to Heap -->
-    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&callback=pushToHeap"></script>
-
     <script>
       function pushToHeap(response) {
         console.log(response && response.company);
@@ -101,6 +99,7 @@
       //   });
       // }
     </script>
+    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&callback=pushToHeap"></script>
     <!-- End Clearbit Reveal to Heap -->
   </head>
   <body>
