@@ -71,9 +71,12 @@
             analytics._writeKey = "axwJlSebRPrIeNfFbPmEq5OrNMoDBT45";
             analytics.SNIPPET_VERSION = "4.13.2";
             analytics.load("axwJlSebRPrIeNfFbPmEq5OrNMoDBT45");
-            analytics.page({
-              userId: analytics.user().anonymousId(),
-            });
+            analytics.page(
+              {},
+              {
+                userId: analytics.user().anonymousId(),
+              }
+            );
           }
       })();
     </script>
