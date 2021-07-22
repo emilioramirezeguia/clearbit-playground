@@ -76,28 +76,31 @@
 
     <!-- Clearbit Reveal to Heap -->
     <script>
+      // const pusthToHeap = (response) => {
+      //   if (reveal && reveal.company) {
+      //     heap.addUserProperties({
+      //       Type: reveal.type,
+      //       "Clearbit Company Name": reveal.company.name,
+      //       "Clearbit Company Domain": reveal.domain,
+      //       "Clearbit Company Industry": reveal.company.category.industry,
+      //       "Clearbit Company Sub Industry":
+      //         reveal.company.category.subIndustry,
+      //       "Clearbit Company Employee Range":
+      //         reveal.company.metrics.employeesRange,
+      //       "Clearbit Company Estimated Revenue Range":
+      //         reveal.company.metrics.estimatedAnnualRevenue,
+      //       "Clearbit Company Global Alexa Rank":
+      //         reveal.company.metrics.alexaGlobalRank,
+      //       "Clearbit Company HQ Country": reveal.company.geo.country,
+      //       "Clearbit Company HQ State": reveal.company.geo.state,
+      //       "Clearbit Company HQ City": reveal.company.geo.city,
+      //       "Clearbit Company SIC Code": reveal.company.category.sicCode,
+      //     });
+      //   }
+      // };
       function pushToHeap(response) {
-        console.log(response && response.company);
+        console.log("Reveal Response:", response);
       }
-      // if (reveal !== null && reveal.company) {
-      //   heap.addUserProperties({
-      //     Type: reveal.type,
-      //     "Clearbit Company Name": reveal.company.name,
-      //     "Clearbit Company Domain": reveal.domain,
-      //     "Clearbit Company Industry": reveal.company.category.industry,
-      //     "Clearbit Company Sub Industry": reveal.company.category.subIndustry,
-      //     "Clearbit Company Employee Range":
-      //       reveal.company.metrics.employeesRange,
-      //     "Clearbit Company Estimated Revenue Range":
-      //       reveal.company.metrics.estimatedAnnualRevenue,
-      //     "Clearbit Company Global Alexa Rank":
-      //       reveal.company.metrics.alexaGlobalRank,
-      //     "Clearbit Company HQ Country": reveal.company.geo.country,
-      //     "Clearbit Company HQ State": reveal.company.geo.state,
-      //     "Clearbit Company HQ City": reveal.company.geo.city,
-      //     "Clearbit Company SIC Code": reveal.company.category.sicCode,
-      //   });
-      // }
     </script>
     <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&callback=pushToHeap"></script>
     <!-- End Clearbit Reveal to Heap -->
