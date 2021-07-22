@@ -73,6 +73,7 @@
             analytics.load("axwJlSebRPrIeNfFbPmEq5OrNMoDBT45");
             analytics.page(function () {
               var anonymousId = analytics.user().anonymousId();
+              console.log("Anonymous ID:", anonymousId);
               analytics.setUserId(anonymousId);
             });
           }
