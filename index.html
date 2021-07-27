@@ -98,6 +98,7 @@
   }
   ```
 -->
+    <!-- Custom Form (identify call) -->
     <div
       class="
         min-h-screen
@@ -119,7 +120,7 @@
             alt="Workflow"
           />
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Identify Call
+            Custom Form (Identify Call)
           </h2>
         </div>
         <form class="mt-8 space-y-6" action="#" method="">
@@ -186,6 +187,21 @@
         </form>
       </div>
     </div>
+    <!-- End Custom Form (identify call)-->
+    <!-- HubSpot Form -->
+    <script
+      charset="utf-8"
+      type="text/javascript"
+      src="//js.hsforms.net/forms/shell.js"
+    ></script>
+    <script>
+      hbspt.forms.create({
+        region: "na1",
+        portalId: "20484988",
+        formId: "7d54e712-49e7-446b-9b59-b331f9c842a5",
+      });
+    </script>
+    <!-- End HubSpot Form -->
     <script>
       // Identify the user
       const identify = function (event) {
