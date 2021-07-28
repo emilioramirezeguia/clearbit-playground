@@ -207,9 +207,14 @@
         portalId: "20484988",
         formId: "7d54e712-49e7-446b-9b59-b331f9c842a5",
         onFormSubmit: function ($form) {
+          // Fetch all form fields
           let formFields = $form.serializeArray();
-          let email = formFields[0].value;
-          console.log("Is this an email? ", email);
+          // Fetch submitted email
+          let submittedEmail = formFields[0].value;
+          // Send identified user to Clearbit
+          clearbit.identify(submittedEmail, {
+            email: submittedEmail,
+          });
         },
       });
     </script>
