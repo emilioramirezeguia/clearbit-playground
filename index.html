@@ -272,6 +272,7 @@
           let formFields = $form.serializeArray();
           // Fetch submitted email
           let submittedEmail = formFields[0].value;
+          console.log("Submitted Email:", submittedEmail);
           // Send identified user to Clearbit
           clearbit.identify(submittedEmail, {
             email: submittedEmail,
