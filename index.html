@@ -270,7 +270,11 @@
         onFormSubmit: function ($form) {
           // Fetch all form fields
           let formFields = $form.serializeArray();
-          console.log("Form Fields: ", formFields);
+          let emailField = formFields.find(function (formField) {
+            return field.name === "email";
+          });
+          let submittedEmail = emailField.value;
+          console.log("Submitted Email: ", submittedEmail);
           // // Fetch submitted email
           // let submittedEmail = formFields[0].value;
           // console.log("Submitted Email:", submittedEmail);
