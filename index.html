@@ -293,10 +293,16 @@
         "797-LZE-483",
         1333,
         function (form) {
-          // Add an onSubmit handler
           form.onSubmit(function () {
+            // Fetch all form values
             let formValues = form.getValues();
-            console.log("Form Values? ", formValues);
+            console.log(" Marketo form values: ", formValues);
+            // Grab the email field's value
+            let submittedEmail = formValues.Email;
+            // Send the identified user to Clearbit
+            clearbit.identify(submittedEmail, {
+              email: submittedEmail,
+            });
           });
         }
       );
