@@ -271,7 +271,7 @@
           // Fetch all form fields
           let formFields = $form.serializeArray();
           let emailField = formFields.find(function (formField) {
-            return field.name === "email";
+            return formField.name === "email";
           });
           let submittedEmail = emailField.value;
           console.log("Submitted Email: ", submittedEmail);
