@@ -270,13 +270,14 @@
         onFormSubmit: function ($form) {
           // Fetch all form fields
           let formFields = $form.serializeArray();
-          // Fetch submitted email
-          let submittedEmail = formFields[0].value;
-          console.log("Submitted Email:", submittedEmail);
-          // Send identified user to Clearbit
-          clearbit.identify(submittedEmail, {
-            email: submittedEmail,
-          });
+          console.log("Form Fields: ", formFields);
+          // // Fetch submitted email
+          // let submittedEmail = formFields[0].value;
+          // console.log("Submitted Email:", submittedEmail);
+          // // Send identified user to Clearbit
+          // clearbit.identify(submittedEmail, {
+          //   email: submittedEmail,
+          // });
         },
       });
     </script>
