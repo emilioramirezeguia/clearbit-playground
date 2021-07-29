@@ -295,7 +295,8 @@
         function (form) {
           // Add an onSubmit handler
           form.onSubmit(function () {
-            console.log("What is this form object?: ", form);
+            let formValues = form.getValues();
+            console.log("Form Values? ", formValues);
           });
         }
       );
