@@ -331,23 +331,30 @@
     </div>
     <!-- End Custom Form (identify call)-->
     <!-- HubSpot Form -->
-    <!--[if lte IE 8]>
-      <script
-        charset="utf-8"
-        type="text/javascript"
-        src="//js.hsforms.net/forms/v2-legacy.js"
-      ></script>
-    <![endif]-->
     <script
       charset="utf-8"
       type="text/javascript"
-      src="//js.hsforms.net/forms/v2.js"
+      src="//js.hsforms.net/forms/shell.js"
     ></script>
     <script>
       hbspt.forms.create({
         region: "na1",
-        portalId: "6572437",
-        formId: "48269179-3bb2-456b-b570-c75b8ecc103b",
+        portalId: "20484988",
+        formId: "7d54e712-49e7-446b-9b59-b331f9c842a5",
+        onFormSubmit: function ($form) {
+          // Fetch all form fields
+          let formFields = $form.serializeArray();
+          // Find the email field
+          let emailField = formFields.find(function (formField) {
+            return formField.name === "email";
+          });
+          // Grab the email field's value (i.e. the email submitted)
+          let submittedEmail = emailField.value;
+          // Send the identified user to Clearbit
+          clearbit.identify(submittedEmail, {
+            email: submittedEmail,
+          });
+        },
       });
     </script>
     <!-- End HubSpot Form -->
