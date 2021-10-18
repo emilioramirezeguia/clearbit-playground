@@ -10,7 +10,10 @@
     <title>Clearbit Forms Demo</title>
     <script>
       window.addEventListener("message", function (event) {
-        if (event.origin != "https://emilioramirezeguia.github.io") {
+        if (
+          event.origin != "https://emilioramirezeguia.github.io" &&
+          event.data.message === "PARDOT_FORM_SUCCESS"
+        ) {
           return;
         }
         console.log("Message successfully sent!");
