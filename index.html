@@ -8,27 +8,6 @@
       rel="stylesheet"
     />
     <title>Clearbit Forms Demo</title>
-    <script>
-      var formData = {};
-      //Below is the event listener that will listen for the Pardot Events
-      window.addEventListener("message", receiveMessage, false);
-      function receiveMessage(event) {
-        // Form data ready, update formData
-        if (
-          event.data &&
-          event.data.message === "PARDOT_DATA_READY" &&
-          event.data.formData
-        ) {
-          formData = event.data.formData; // Update formData
-        }
-        // Form was submitted and validated, apply identify call
-        if (event.data && event.data.message === "PARDOT_FORM_SUCCESS") {
-          console.log("Finally!");
-          console.log("Form Data", formData);
-        }
-      }
-    </script>
-    <!-- End Pardot Form Submit Listener-->
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -440,6 +419,5 @@
       // Add click event handler to button
       form.addEventListener("submit", identify);
     </script>
-    <!-- Pardot Form Submit Listener -->
   </body>
 </html>
