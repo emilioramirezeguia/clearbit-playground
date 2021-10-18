@@ -423,9 +423,8 @@
     <script>
       window.addEventListener("message", function (event) {
         if (
-          event.data &&
-          event.data.message === "PARDOT_FORM_SUCCESS" &&
-          event.data.data
+          event.origin === "https://emilioramirezeguia.github.io" &&
+          event.data.message === "PARDOT_FORM_SUCCESS"
         ) {
           console.log("Message successfully sent!");
           window.dataLayer.push({
