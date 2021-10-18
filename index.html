@@ -10,14 +10,13 @@
     <title>Clearbit Forms Demo</title>
     <script>
       window.addEventListener("message", function (event) {
-        if (
-          event.origin != "https://emilioramirezeguia.github.io" &&
-          event.data.message === "PARDOT_FORM_SUCCESS"
-        ) {
+        if (event.origin != "https://emilioramirezeguia.github.io") {
           return;
         }
-        console.log("Message successfully sent!");
-        console.log("Logged Event", event);
+        if (event.data.message === "PARDOT_FORM_SUCCESS") {
+          console.log("Message successfully sent!");
+          console.log("Logged Event", event);
+        }
       });
     </script>
     <!-- End Pardot Form Submit Listener-->
