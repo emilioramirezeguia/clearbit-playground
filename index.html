@@ -8,6 +8,17 @@
       rel="stylesheet"
     />
     <title>Clearbit Forms Demo</title>
+    <script>
+      window.addEventListener("message", function (event) {
+        if (
+          event.origin === "https://emilioramirezeguia.github.io" &&
+          event.data.message === "PARDOT_FORM_SUCCESS"
+        ) {
+          console.log("Message successfully sent!");
+        }
+      });
+    </script>
+    <!-- End Pardot Form Submit Listener-->
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -420,19 +431,5 @@
       form.addEventListener("submit", identify);
     </script>
     <!-- Pardot Form Submit Listener -->
-    <script>
-      window.addEventListener("message", function (event) {
-        if (
-          event.origin === "https://emilioramirezeguia.github.io" &&
-          event.data.message === "PARDOT_FORM_SUCCESS"
-        ) {
-          console.log("Message successfully sent!");
-          window.dataLayer.push({
-            event: "pardot-form-submit",
-          });
-        }
-      });
-    </script>
-    <!-- End Pardot Form Submit Listener-->
   </body>
 </html>
