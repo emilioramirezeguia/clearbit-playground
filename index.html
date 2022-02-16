@@ -11,14 +11,5 @@
       <input type="email" name="work-email" id="contact-form-email" />
       <button type="submit">Submit</button>
     </form>
-    <script>
-      var form = document.getElementById("contact-form");
-      form.addEventListener("submit", function (event) {
-        var email = document.getElementById("contact-form-email").value;
-        clearbit.identify(email, {
-          email: email,
-        });
-      });
-    </script>
   </body>
 </html>
