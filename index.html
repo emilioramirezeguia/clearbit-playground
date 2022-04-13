@@ -24,9 +24,24 @@
       <input type="email" name="work-email" id="contact-form-email" />
       <button type="submit">Submit</button>
     </form>
-    <!-- Start of Meetings Embed Script -->
-    <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/emilio-ramirez?embed=true"></div>
-    <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
-    <!-- End of Meetings Embed Script -->
+    <!--[if lte IE 8]>
+      <script
+        charset="utf-8"
+        type="text/javascript"
+        src="//js.hsforms.net/forms/v2-legacy.js"
+      ></script>
+    <![endif]-->
+    <script
+      charset="utf-8"
+      type="text/javascript"
+      src="//js.hsforms.net/forms/v2.js"
+    ></script>
+    <script>
+      hbspt.forms.create({
+        region: "na1",
+        portalId: "21784657",
+        formId: "33d74ad2-a515-4667-9360-f64388f87bf2",
+      });
+    </script>
   </body>
 </html>
