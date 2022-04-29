@@ -92,7 +92,7 @@
     <script>
       let form = document.querySelector("form");
       let email = document.querySelector("input[type='email']").value;
-      segment.identify(email, {
+      analytics.identify(email, {
         email: email,
       });
     </script>
