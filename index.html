@@ -91,9 +91,11 @@
     </form>
     <script>
       let form = document.querySelector("form");
-      let email = document.querySelector("input[type='email']").value;
-      analytics.identify(email, {
-        email: email,
+      form.addEventListener("submit", function (event) {
+        let email = document.querySelector("input[type='email']").value;
+        analytics.identify(email, {
+          email: email,
+        });
       });
     </script>
     <!--[if lte IE 8]>
