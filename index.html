@@ -2,6 +2,12 @@
 <html>
   <head>
     <title>Identify Call Foundations</title>
+    <script>
+      function myCallback(response) {
+        console.log("Reveal callback", response);
+      }
+    </script>
+    <script src="https://reveal.clearbit.com/v1/companies/reveal?authorization=pk_44b7f5a3b1aa0bbd07d94b358aa15699&callback=myCallback&variable=reveal"></script>
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
