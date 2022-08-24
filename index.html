@@ -83,123 +83,13 @@
     <!-- End Segment -->
   </head>
   <body>
-    <form id="contact-form">
-      <label for="email">Email</label>
-      <input type="email" name="work-email" id="contact-form-email" />
-      <button type="submit">Submit</button>
-    </form>
-    <script>
-      let form = document.querySelector("form");
-      let email = document.querySelector("input[type='email']").value;
-      form.addEventListener("submit", function (event) {
-        let email = document.querySelector("input[type='email']").value;
-        analytics.identify(email, {
-          email: email,
-        });
-      });
-    </script>
-    <!-- HubSpot form -->
-    <!-- <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js?pre=1"></script>
     <script>
       hbspt.forms.create({
-      region: "na1",
-      portalId: "20484988",
-      formId: "433671eb-50f5-4dc7-a2ac-294e8caa860e"
+        region: "na1",
+        portalId: "22395100",
+        formId: "924c9633-ebaf-4930-b37e-4362aea5fa96"
       });
-    </script> -->
-    <!-- End HubSpot form -->
-    <!-- Pardot form -->
-    <!-- <iframe src="https://go.demo.pardot.com/l/64792/2021-09-20/nd3wd" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe> -->
-    <!-- End Pardot form -->
-    <!-- <h1>reCAPTCHA v3 w/ Clearbit Marketo form shortening</h1> -->
-    <!-- Marketo form -->
-    <!-- <script src="//797-LZE-483.mktoweb.com/js/forms2/js/forms2.min.js"></script>
-    <form id="mktoForm_1333"></form>
-    <script>MktoForms2.loadForm("//797-LZE-483.mktoweb.com", "797-LZE-483", 1333);</script> -->
-    <!-- End Marketo form -->
+    </script>
   </body>
-  <!-- <script>
-    (function () {
-      var userConfig = {
-        apiKeys: {
-          recaptcha: "6Lc623IgAAAAAIlQth5oQxio8HGwCKzm8CLdkrFc"
-        },
-        fields: {
-          recaptchaFinger: "reCAPTCHALastUserFingerprint"
-        },
-        actions: {
-          formSubmit: "form"
-        },
-        debug: {
-          testBadFinger: false
-        }
-      };
-
-      /* --- NO NEED TO TOUCH BELOW THIS LINE --- */
-
-      MktoForms2.whenReady(function (mktoForm) {
-        var formEl = mktoForm.getFormElem()[0],
-          submitButtonEl = formEl.querySelector("button[type='submit']");
-
-        /* pending reCAPTCHA widget ready */
-        submitButtonEl.disabled = true;
-
-        /* pending reCAPTCHA verify */
-        mktoForm.submittable(false);
-        mktoForm.locked = false;
-
-        mktoForm.onValidate(function (native) {
-          if (!native) return;
-
-          grecaptcha.ready(function () {
-            grecaptcha
-              .execute(userConfig.apiKeys.recaptcha, {
-                action: userConfig.actions.formSubmit
-              })
-              .then(function (recaptchaFinger) {
-                var mktoFields = {};
-                if (mktoForm.locked == false) {
-                  console.log("primary recaptcha response resolved");
-                  mktoForm.locked = true;
-                  if (!userConfig.debug.testBadFinger) {
-                    mktoFields[userConfig.fields.recaptchaFinger] = recaptchaFinger;
-                  } else {
-                    mktoFields[userConfig.fields.recaptchaFinger] =
-                      "known bad fingerprint " + Math.random();
-                  }
-                  mktoForm.addHiddenFields(mktoFields);
-                  mktoForm.submittable(true);
-                  mktoForm.submit();
-                } else {
-                  console.log("secondary recaptcha response resolved");
-                }
-              });
-          });
-        });
-      });
-
-      var recaptchaListeners = {
-        ready: function () {
-          MktoForms2.whenReady(function (mktoForm) {
-            var formEl = mktoForm.getFormElem()[0],
-              submitButtonEl = formEl.querySelector("button[type='submit']");
-
-            submitButtonEl.disabled = false;
-          });
-        }
-      };
-      Object.keys(recaptchaListeners).forEach(function globalize(fnName) {
-        window["grecaptchaListeners_" + fnName] = recaptchaListeners[fnName];
-      });
-
-      /* inject the reCAPTCHA library */
-      recaptchaLib = document.createElement("script");
-      recaptchaLib.src =
-        "https://www.google.com/recaptcha/api.js?render=" +
-        userConfig.apiKeys.recaptcha +
-        "&onload=grecaptchaListeners_ready";
-      document.head.appendChild(recaptchaLib);
-    })();
-
-  </script> -->
 </html>
