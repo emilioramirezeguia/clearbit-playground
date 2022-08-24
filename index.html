@@ -83,15 +83,30 @@
     <!-- End Segment -->
   </head>
   <body>
+    <form id="contact-form">
+      <label for="email">Email</label>
+      <input type="email" name="work-email" id="contact-form-email" />
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      let form = document.querySelector("form");
+      let email = document.querySelector("input[type='email']").value;
+      form.addEventListener("submit", function (event) {
+        let email = document.querySelector("input[type='email']").value;
+        analytics.identify(email, {
+          email: email,
+        });
+      });
+    </script>
     <!-- HubSpot form -->
-    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+    <!-- <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
     <script>
       hbspt.forms.create({
       region: "na1",
       portalId: "20484988",
       formId: "433671eb-50f5-4dc7-a2ac-294e8caa860e"
       });
-    </script>
+    </script> -->
     <!-- End HubSpot form -->
     <!-- Pardot form -->
     <!-- <iframe src="https://go.demo.pardot.com/l/64792/2021-09-20/nd3wd" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe> -->
@@ -103,7 +118,7 @@
     <script>MktoForms2.loadForm("//797-LZE-483.mktoweb.com", "797-LZE-483", 1333);</script> -->
     <!-- End Marketo form -->
   </body>
-  <script>
+  <!-- <script>
     (function () {
       var userConfig = {
         apiKeys: {
@@ -186,5 +201,5 @@
       document.head.appendChild(recaptchaLib);
     })();
 
-  </script>
+  </script> -->
 </html>
