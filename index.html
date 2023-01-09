@@ -69,21 +69,16 @@
     <!-- End Segment -->
   </head>
   <body>
-    <h1>Welcome to Segment Training 👋</h1>
-    <form>
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" />
-      <button>Submit</button>
-    </form>
+    <script
+      charset="utf-8"
+      type="text/javascript"
+      src="//js.hsforms.net/forms/embed/v2.js"
+    ></script>
     <script>
-      var form = document.querySelector("form");
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        var email = form.querySelector("input[type='email']").value;
-        analytics.identify(email, {
-          email: email,
-        });
-        form.reset();
+      hbspt.forms.create({
+        region: "na1",
+        portalId: "21784657",
+        formId: "33d74ad2-a515-4667-9360-f64388f87bf2",
       });
     </script>
   </body>
