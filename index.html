@@ -2,7 +2,20 @@
 <html>
   <head>
     <title>Clearbit Playground</title>
-    <script src="https://tag.clearbitscripts.com/v1/pk_44b7f5a3b1aa0bbd07d94b358aa15699/tags.js"></script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5BG6ZDB");
+    </script>
+    <!-- End Google Tag Manager -->
     <style>
       body {
         display: flex;
@@ -19,19 +32,5 @@
       <input type="email" name="email" id="email" value />
       <button>Submit</button>
     </form>
-    <script>
-      // Step 1: LISTEN for a form submission
-      var form = document.querySelector("form");
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        // Step 2: GRAB the email that was submitted
-        var email = form.querySelector("input[type='email']").value;
-        // Step 3: SEND the submitted email to Clearbit
-        clearbit.identify(email, {
-          email: email,
-        });
-        form.reset();
-      });
-    </script>
   </body>
 </html>
