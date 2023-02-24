@@ -2,50 +2,13 @@
 <html>
   <head>
     <title>Clearbit Playground</title>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-5BG6ZDB");
-    </script>
-    <!-- End Google Tag Manager -->
-    <style>
-      nav {
-        display: flex;
-        justify-content: space-evenly;
-      }
-      pre {
-        font-size: 1.6rem;
-        background-color: #f5f5f5;
-        border: 1px solid #ccc;
-        padding: 8.5px;
-      }
-    </style>
   </head>
   <body>
-    <nav>
-      <a href="#">Clearbit Tag</a>
-      <a href="pages/reveal-on.html">Personalization</a>
-      <a href="pages/forms-on.html">Forms</a>
-      <a href="pages/allowed-referrer-error.html">403 Error</a>
-      <a href="pages/content-security-policy-error.html"
-        >Content Security Policy</a
-      >
-    </nav>
-    <h1>Clearbit Tag (Emilio Playground 1)</h1>
-    <pre>
-      website/
-      |__ tags.js
-         |__ destinations.min.js
-         |__ tracking.min.js
-            |__ p
-    </pre>
+    <h1>Identify Call Foundations</h1>
+    <form id="form">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" value />
+      <button>Submit</button>
+    </form>
   </body>
 </html>
