@@ -2,108 +2,14 @@
 <html>
   <head>
     <title>Clearbit Playground</title>
-    <!-- Segment -->
-    <script>
-      !(function () {
-        var analytics = (window.analytics = window.analytics || []);
-        if (!analytics.initialize)
-          if (analytics.invoked)
-            window.console &&
-              console.error &&
-              console.error("Segment snippet included twice.");
-          else {
-            analytics.invoked = !0;
-            analytics.methods = [
-              "trackSubmit",
-              "trackClick",
-              "trackLink",
-              "trackForm",
-              "pageview",
-              "identify",
-              "reset",
-              "group",
-              "track",
-              "ready",
-              "alias",
-              "debug",
-              "page",
-              "once",
-              "off",
-              "on",
-              "addSourceMiddleware",
-              "addIntegrationMiddleware",
-              "setAnonymousId",
-              "addDestinationMiddleware",
-            ];
-            analytics.factory = function (e) {
-              return function () {
-                var t = Array.prototype.slice.call(arguments);
-                t.unshift(e);
-                analytics.push(t);
-                return analytics;
-              };
-            };
-            for (var e = 0; e < analytics.methods.length; e++) {
-              var key = analytics.methods[e];
-              analytics[key] = analytics.factory(key);
-            }
-            analytics.load = function (key, e) {
-              var t = document.createElement("script");
-              t.type = "text/javascript";
-              t.async = !0;
-              t.src =
-                "https://cdn.segment.com/analytics.js/v1/" +
-                key +
-                "/analytics.min.js";
-              var n = document.getElementsByTagName("script")[0];
-              n.parentNode.insertBefore(t, n);
-              analytics._loadOptions = e;
-            };
-            analytics._writeKey = "XLeyHuGPyY6Qet51P5EgR9QkT2KtgjOW";
-            analytics.SNIPPET_VERSION = "4.15.3";
-            analytics.load("XLeyHuGPyY6Qet51P5EgR9QkT2KtgjOW");
-            analytics.page();
-          }
-      })();
-    </script>
-    <!-- End Segment -->
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-5BG6ZDB");
-    </script>
-    <!-- End Google Tag Manager -->
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-
-      h1 {
-        display: flex;
-        justify-content: center;
-      }
-
-      div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-    </style>
+    <!-- Clearbit JavaScript -->
+    <script
+      src="https://tag.clearbitscripts.com/v1/pk_44b7f5a3b1aa0bbd07d94b358aa15699/tags.js"
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></script>
+    <!-- End Clearbit JavaScript -->
   </head>
   <body>
-    <h1>Identify Call Tests</h1>
-    <div>
-      <a href="pages/hubspot-embedded-form.html">HubSpot Embedded Form</a>
-      <a href="pages/marketo-embedded-form.html">Marketo Embedded Form</a>
-    </div>
+    <h1>Clearbit Playground</h1>
   </body>
 </html>
